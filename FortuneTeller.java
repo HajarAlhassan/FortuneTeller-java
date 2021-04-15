@@ -11,7 +11,7 @@ public class FortuneTeller {
     }
 
     public static String colorFortune(String color) {
-        String text="Your Sweet";
+        String text="";
         String[] fortune = new String[7];
         fortune[0]= "You are brave like a LION";
         fortune[1]= "You are loyal like a DOG";
@@ -20,7 +20,7 @@ public class FortuneTeller {
         fortune[4]= "You are strong like a TIGER";
         fortune[5]= "You are Lovely like a cat";
         fortune[6]= "You are shy  like a TURTLE";
-        switch (color.toLowerCase()){
+        switch (color.toUpperCase()){
             case "RED":
                 text= fortune[0];
                 break;
@@ -148,16 +148,17 @@ public class FortuneTeller {
         System.out.println("Enter your ROYGBIV color please,\nIf you don't know what ROYGBIV color enter HELP!");
             favColor=scanner.nextLine();
             if(input.equalsIgnoreCase("Quit")||input.equalsIgnoreCase("q"))  break;
-            if(favColor.equalsIgnoreCase("help")){
+            while(favColor.equalsIgnoreCase("help")){
                 System.out.println("This is the list of ROYGBIV color:");
                System.out.println("The ROYGBIV colors are red, orange, yellow, green, blue, indigo, violet.");
                 System.out.println("Now Enter your ROYGBIV color please:");
                 favColor=scanner.nextLine();
            }
 
-            String text=fName+" "+lName+"Welcome To Future Teller!\n I Shall Tell Your Fortune!\n" +
-                    "For "+age+" % you are: "+colorFortune(favColor)+" Looking into my crystal ball, your lucky number is ("+nameFortune(fName,lName)+").\n I see that...."+siblingsFortune(siblings)+"! You will be the guy/girl who will be able to solve any problem anyone throws at you!\n You are also very serious about your future!\n" +
-                    " (Remember, this test is just for fun. Do not take this personally! Thank you!) \nGOOD LUCK WITH WHATEVER LIFE HOLDS FOR YOU!\n" ;
+            String text=" Welcome "+fName.toUpperCase()+" "+lName.toUpperCase()+", to Future Teller!\nI Shall Tell Your Fortune!\n" +
+                    "For "+age+" % : "+colorFortune(favColor)+" ,Looking into my crystal ball, your lucky number is ("+nameFortune(fName,lName)+").\nI see that...."+siblingsFortune(siblings)+"! " +
+                    "You will be the guy/girl who will be able to solve any problem anyone throws at you!\nYou are also very serious about your future! " +
+                    monthFortune(month)+"\n(Remember, this test is just for fun. Do not take this personally! Thank you!) \nGOOD LUCK WITH WHATEVER LIFE HOLDS FOR YOU!\n" ;
 
             System.out.println(text);
             System.out.println("Do you want to play again????");
